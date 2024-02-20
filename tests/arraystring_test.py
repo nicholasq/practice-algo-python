@@ -49,6 +49,8 @@ class ArrayStringTest(unittest.TestCase):
             ([0, 1, 0], 1, False),
             ([0, 0, 0], 1, True),
             ([0, 0, 0], 2, True),
+            ([1, 0, 0, 0, 0, 1], 2, False),
+            ([0, 0, 0, 0, 0, 1, 0, 0], 0, True)
         ]
         for flowerBed, toPlant, expected in test_cases:
             actual = time_function(asSolution.canPlaceFlowers, flowerBed, toPlant)

@@ -47,11 +47,11 @@ class ArrayStringSolution:
 
                 if empty_left_plot and empty_right_plot:
                     count += 1
-                    prev_is_empty = True
-                elif middle_plot == 0:
+                    prev_is_empty = False
+                else:
                     prev_is_empty = True
             else:
                 prev_is_empty = False
             if count >= n:
                 return True
-        return False
+        return n == 0
