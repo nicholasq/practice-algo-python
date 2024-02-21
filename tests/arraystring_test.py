@@ -56,6 +56,18 @@ class ArrayStringTest(unittest.TestCase):
             actual = time_function(asSolution.canPlaceFlowers, flowerBed, toPlant)
             self.assertEqual(expected, actual, f'flowerBed={flowerBed}, toPlant={toPlant}')
 
+    def test_reverse_vowels(self):
+        test_cases = [
+            ("hello", "holle"),
+            ("leetcode", "leotcede"),
+            (" ", " "),
+            ("a.", "a."),
+            ("!!!", "!!!"),
+        ]
+        for word, expected in test_cases:
+            actual = time_function(asSolution.reverseVowels, word)
+            self.assertEqual(expected, actual)
+
 
 if __name__ == '__main__':
     unittest.main()

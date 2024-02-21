@@ -36,6 +36,7 @@ class ArrayStringSolution:
         greatest = max(candies)
         return [x + extra_candies >= greatest for x in candies]
 
+    # https://leetcode.com/problems/can-place-flowers
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
         prev_is_empty = True
         count = 0
@@ -55,3 +56,22 @@ class ArrayStringSolution:
             if count >= n:
                 return True
         return n == 0
+
+
+    # https://leetcode.com/problems/reverse-vowels-of-a-string
+    def reverseVowels(self, s: str) -> str:
+        vowels = set('AEIOUaeiou')
+        size = len(s)
+        left, right = 0, size - 1
+        result = [c for c in s]
+        while left < right:
+            a, b = s[left], s[right]
+            if a in vowels and b in vowels:
+                result[left], result[right] = b, a
+                left += 1
+                right -= 1
+            if a not in vowels:
+                left += 1
+            if b not in vowels:
+                right -= 1
+        return ''.join(result)
